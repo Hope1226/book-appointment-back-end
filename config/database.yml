@@ -17,7 +17,7 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  # if you are using linux or Mac, you can comment the host,username and password, to avoid errors.
+   # if you are using linux or Mac, you can comment the host,username and password, to avoid errors.
   host: localhost
   username: postgres
   # For window users, to set the env database password run, these 2 commands:
