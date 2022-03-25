@@ -17,9 +17,10 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  # if you are using linux or Mac, you can comment the host,username and password, to avoid errors.
   host: localhost
   username: postgres
-  # to set the env database password run, these 2 commands:
+  # For window users, to set the env database password run, these 2 commands:
   # echo 'export DATABASE_PASSWORD="your_db_psswd"' >> ~/.bashrc
   # source ~/.bashrc
   password: <%= ENV['DATABASE_PASSWORD'] %>
