@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Users::SessionsController < Devise::SessionsController
   include RackSessionFix
   # before_action :configure_sign_in_params, only: [:create]
@@ -38,7 +36,7 @@ class Users::SessionsController < Devise::SessionsController
     if current_user
       render json: {
         status: 200,
-        message: "logged out successfully"
+        message: 'logged out successfully'
       }, status: :ok
     else
       render json: {
