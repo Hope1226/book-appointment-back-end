@@ -272,6 +272,16 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  config.jwt do |jwt|
+    jwt.secret = "30af15fa934f2a2d04739b5867a10e6aca5d538d27bbe6aaa7b825a2f26a9c3f0d4c6740e38c9b38c2301fedc3e232d0190ad5e157556fefc89e54a9c119789d"
+    jwt.dispatch_requests = [
+      ['POST', %r{^/login$}]
+    ]
+    jwt.revocation_requests = [
+      ['DELETE', %r{^/logout$}]
+    ]
+    jwt.expiration_time = 1.weeks.to_i
+  end
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
