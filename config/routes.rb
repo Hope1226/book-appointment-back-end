@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   },
   controllers: {
     sessions: 'users/sessions',
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    items: 'items/show'
   }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
