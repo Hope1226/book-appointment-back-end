@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: %i[show update destroy]
+  load_and_authorize_resource
+  before_action :set_item, only: %i[ show update destroy ]
 
   # GET /items
   def index
@@ -39,14 +40,13 @@ class ItemsController < ApplicationController
   end
 
   private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_item
+      @item = Item.find(params[:id])
+    end
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_item
-    @item = Item.find(params[:id])
-  end
-
-  # Only allow a list of trusted parameters through.
-  def item_params
-    params.require(:item).permit(:user_id, :reservation_id, :date_reservation, :name, :description, :price, :image)
-  end
+    # Only allow a list of trusted parameters through.
+    def item_params
+      params.require(:item).permit(:user_id, :name, :description, :price, :image)
+    end
 end

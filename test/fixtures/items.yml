@@ -2,8 +2,6 @@
 
 one:
   user: one
-  reservation_id: 1
-  date_reservation: 2022-03-29
   name: MyString
   description: MyText
   price: 9.99
@@ -11,8 +9,6 @@ one:
 
 two:
   user: two
-  reservation_id: 1
-  date_reservation: 2022-03-29
   name: MyString
   description: MyText
   price: 9.99
