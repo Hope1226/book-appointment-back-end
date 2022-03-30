@@ -16,6 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_30_041945) do
 
   create_table "spaces", force: :cascade do |t|
     t.string "name", null: false
+    t.string "description", null: false
     t.decimal "price", null: false
     t.string "image", null: false
     t.boolean "removed", default: false, null: false
