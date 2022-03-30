@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates :name, presence: { message: 'This field can not be blank' }
 
   has_many :spaces, dependent: :destroy
+  has_many :reservations, dependent: :destroy
 
   def admin?
     role == 'admin'
