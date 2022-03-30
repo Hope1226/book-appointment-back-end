@@ -7,4 +7,8 @@ class User < ApplicationRecord
   validates :name, presence: { message: 'This field can not be blank' }
 
   has_many :spaces
+
+  def admin?
+    role == 'admin'
+  end
 end
