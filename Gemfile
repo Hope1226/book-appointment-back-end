@@ -18,6 +18,9 @@ gem 'puma', '~> 5.0'
 # rack-cors
 gem 'rack-cors'
 
+# cancancan authorization gem
+gem 'cancancan'
+
 # devise gems
 gem 'devise'
 gem 'devise-jwt'
