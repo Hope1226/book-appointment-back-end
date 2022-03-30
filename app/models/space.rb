@@ -5,5 +5,5 @@ class Space < ApplicationRecord
   validates :image, presence: { message: 'field can not be blank' }
   validates :description, presence: { message: 'field can not be blank' }
 
-  belongs_to :users
+  belongs_to :user
 end

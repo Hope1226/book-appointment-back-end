@@ -6,7 +6,7 @@ class CreateSpaces < ActiveRecord::Migration[7.0]
       t.decimal :price, null: false
       t.string :image, null: false
       t.boolean :removed, null: false, default: false
-      t.references :users, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

@@ -1,4 +1,5 @@
 class SpacesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_space, only: %i[ show update destroy ]
 
   # GET /spaces
@@ -15,7 +16,7 @@ class SpacesController < ApplicationController
 
   # POST /spaces
   def create
-    @space = Space.new(space_params)
+    @space = current_user.spaces.create(space_params)
 
     if @space.save
       render json: @space, status: :created, location: @space
@@ -46,6 +47,6 @@ class SpacesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def space_params
-      params.require(:space).permit(:name, :price, :image, :removed, :users_id)
+      params.require(:space).permit(:name, :price, :image, :removed, :description)
     end
 end
