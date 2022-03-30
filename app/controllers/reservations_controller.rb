@@ -4,7 +4,7 @@ class ReservationsController < ApplicationController
 
   # GET /reservations
   def index
-    @reservations = Reservation.all
+    @reservations = Reservation.all.where(user_id: current_user.id)
 
     render json: @reservations
   end
@@ -16,7 +16,7 @@ class ReservationsController < ApplicationController
 
   # POST /reservations
   def create
-    @reservation = Reservation.new(reservation_params)
+    @reservation = current_user.reservations.create(reservation_params)
 
     if @reservation.save
       render json: @reservation, status: :created, location: @reservation
@@ -48,6 +48,6 @@ class ReservationsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def reservation_params
-    params.require(:reservation).permit(:city, :date, :user_id)
+    params.require(:reservation).permit(:city, :date, :space_id)
   end
 end
