@@ -1,6 +1,6 @@
 class SpacesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_space, only: %i[ show update destroy ]
+  before_action :set_space, only: %i[show update destroy]
   load_and_authorize_resource
 
   # GET /spaces
@@ -41,13 +41,14 @@ class SpacesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_space
-      @space = Space.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def space_params
-      params.require(:space).permit(:name, :price, :image, :removed, :description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_space
+    @space = Space.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def space_params
+    params.require(:space).permit(:name, :price, :image, :removed, :description)
+  end
 end
