@@ -1,4 +1,5 @@
 class ReservationsController < ApplicationController
+  before_action :authenticate_user! #-> routes to the login / signup if not authenticated
   before_action :set_reservation, only: %i[show update destroy]
 
   # GET /reservations
