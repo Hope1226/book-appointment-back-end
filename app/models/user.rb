@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   validates :name, presence: { message: 'This field can not be blank' }
 
-  has_many :spaces
+  has_many :spaces, dependent: :destroy
 
   def admin?
     role == 'admin'
