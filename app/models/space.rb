@@ -6,4 +6,5 @@ class Space < ApplicationRecord
   validates :description, presence: { message: 'field can not be blank' }
 
   belongs_to :user
+  has_many :reservations, dependent: :destroy
 end
