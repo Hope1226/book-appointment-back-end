@@ -4,9 +4,13 @@ class ReservationsController < ApplicationController
 
   # GET /reservations
   def index
-    @reservations = Reservation.all.where(user_id: current_user.id)
-
-    render json: @reservations
+    @reservations = current_user.reservations.includes(:space)
+    @reservations_spaces = @reservations.map do |record|
+      record.attributes.merge(
+        'space' => record.space
+      )
+    end
+    render json: @reservations_spaces
   end
 
   # GET /reservations/1
