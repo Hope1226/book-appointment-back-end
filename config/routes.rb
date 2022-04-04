@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :reservations
-  resources :spaces
+  resources :spaces do
+    resources :reservations
+  end
   devise_for :users, path: '', path_names: {
     sign_in: 'login',
     sign_out: 'logout',
