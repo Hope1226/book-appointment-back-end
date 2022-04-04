@@ -30,7 +30,7 @@ class Ability
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
     user ||= User.new
 
-    can :read, Space, public: true # readaing the spaces is public meanig that everyone can read it
+    can :read, Space # readaing the spaces is public meanig that everyone can read it
     return unless user.admin?
 
     can :manage, Space # finally we give all remaining permissions only to the admins
