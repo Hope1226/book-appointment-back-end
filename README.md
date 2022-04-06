@@ -85,7 +85,7 @@ To setup the spaces-api project in your local machine, in the repo page:
 👤 **Umidjon Ustabaev**
 
 - GitHub: [@Hope1226](https://github.com/Hope1226)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/umidjon-ustabaev/)
+- LinkedIn: [@Hope](https://www.linkedin.com/in/umidjon-ustabaev/)
 
 👤 **KARANGWA Ntwali Josue**
 
