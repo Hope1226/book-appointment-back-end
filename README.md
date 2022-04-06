@@ -4,7 +4,7 @@
 
 > ROR api app purly designed to act as backend and to integrate with [Spaces](https://github.com/Hope1226/book-appointment-front-end).
 
-# Schema
+## Schema
 ![screenshot](./spaces_db_schema.png)
 
 ## Built With
@@ -103,6 +103,8 @@ To setup the spaces-api project in your local machine, in the repo page:
 - GitHub: [@zainsadaqat ](https://github.com/zainsadaqat)
 - Twitter: [@zain_sadaqat](https://twitter.com/zain_sadaqat)
 
+## Project Management
+- The workflow of this project is managed by [Final group capstone: Book an Appointment](https://github.com/users/Hope1226/projects/1).
 
 ## 🤝 Contributing
 
