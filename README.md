@@ -4,7 +4,12 @@
 
 > ROR api app purly designed to act as backend and to integrate with [Spaces](https://github.com/Hope1226/book-appointment-front-end).
 
+## Docs
+
+[spaces-api-docs](https://api-spaces.herokuapp.com/api-docs/).
+
 ## Schema
+
 ![screenshot](./spaces_db_schema.png)
 
 ## Swagger 
