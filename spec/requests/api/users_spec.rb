@@ -34,7 +34,7 @@ end
 
 RSpec.describe 'Login Api', type: :request do
   path '/login' do
-    post 'Creates a new user' do
+    post 'Logs in a user' do
       tags 'Login'
       consumes 'application/json'
       parameter name: :user, in: :body, schema: {
