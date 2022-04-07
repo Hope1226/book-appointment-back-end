@@ -1,21 +1,21 @@
+# rubocop:disable Metrics/BlockLength
 require 'swagger_helper'
 
 RSpec.describe 'Spaces Api', type: :request do
   path '/spaces' do
-
     post 'Creates a new space' do
-      tags 'Spaces'	
+      tags 'Spaces'
       consumes 'application/json'
-      parameter name: :Authorization, in: :header, type: :string, required: true
+      security [{ Bearer: [] }]
       parameter name: :space, in: :body, schema: {
         type: :object,
         properties: {
           name: { type: :string },
           description: { type: :string },
           image: { type: :string },
-          price: { type: :number },
+          price: { type: :number }
         },
-        required: [ 'name', 'description', 'image', 'price' ]
+        required: %w[name description image price]
       }
 
       response '201', 'space created' do
@@ -32,7 +32,7 @@ RSpec.describe 'Spaces Api', type: :request do
     get 'Retrieves all spaces' do
       tags 'Spaces'
       produces 'application/json'
-      parameter name: :Authorization, in: :header, type: :string, required: true
+      security [{ Bearer: [] }]
 
       response '200', 'spaces retrieved' do
         let(:space) { Space.all }
@@ -51,7 +51,7 @@ RSpec.describe 'Space Api', type: :request do
     get 'Retrieves a space' do
       tags 'Spaces'
       produces 'application/json'
-      parameter name: :Authorization, in: :header, type: :string, required: true
+      security [{ Bearer: [] }]
       parameter name: :id, in: :path, type: :string
 
       response '200', 'space retrieved' do
@@ -67,11 +67,11 @@ RSpec.describe 'Space Api', type: :request do
     delete 'Deletes a space' do
       tags 'Spaces'
       consumes 'application/json'
+      security [{ Bearer: [] }]
       parameter name: :id, in: :path, type: :string
-      parameter name: :Authorization, in: :header, type: :string, required: true
 
       response '200', 'space deleted' do
-        let(:space) { Space.create(name: 'test name', description: 'test description', image: 'test image', price: 1) }
+        let(:space) { Space.destroy(Space.first.id) }
         run_test!
       end
 
@@ -81,3 +81,5 @@ RSpec.describe 'Space Api', type: :request do
     end
   end
 end
+
+# rubocop:enable Metrics/BlockLength
