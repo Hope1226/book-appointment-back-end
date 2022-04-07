@@ -13,10 +13,10 @@ RSpec.describe 'Signup Api', type: :request do
             name: { type: :string },
             email: { type: :string },
             password: { type: :string },
-            password_confirmation: { type: :string },
+            password_confirmation: { type: :string }
           }
         },
-        required: [ 'name', 'email', 'password', 'password_confirmation' ]
+        required: %w[name email password password_confirmation]
       }
 
       response '201', 'Signed up successfull' do
@@ -43,10 +43,10 @@ RSpec.describe 'Login Api', type: :request do
           type: :object,
           properties: {
             email: { type: :string },
-            password: { type: :string },
+            password: { type: :string }
           }
         },
-        required: [ 'email', 'password' ]
+        required: %w[email password]
       }
 
       response '201', 'Logged in successfull' do
