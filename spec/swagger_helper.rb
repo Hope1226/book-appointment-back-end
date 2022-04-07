@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.configure do |config|
@@ -16,26 +14,29 @@ RSpec.configure do |config|
   # the root example_group in your specs, e.g. describe '...', swagger_doc: 'v2/swagger.json'
   config.swagger_docs = {
     'v1/swagger.json' => {
-      swagger: '2.0',
+      openapi: '3.0.1',
       info: {
         title: 'API V1',
         version: 'v1'
       },
+      paths: {},
       servers: [
         {
           url: 'https://api-spaces.herokuapp.com'
         }
       ],
-      securityDefinitions: {
-        'Bearer': {
-          'type': 'apiKey',
-          'name': 'Authorization',
-          'in': 'header'
+      components: {
+        securitySchemes: {
+          Bearer: {
+            type: :apiKey,
+            in: :header,
+            name: 'Authorization',
+            description: 'Authorization token'
+          }
         }
       }
     }
   }
-
   # Specify the format of the output Swagger file when running 'rswag:specs:swaggerize'.
   # The swagger_docs configuration option has the filename including format in
   # the key, this may want to be changed to avoid putting yaml in json files.
