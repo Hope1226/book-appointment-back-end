@@ -7,6 +7,11 @@
 ## Schema
 ![screenshot](./spaces_db_schema.png)
 
+## Swagger 
+
+![swagger](https://user-images.githubusercontent.com/58233753/162178749-4598721d-1115-412f-a7b7-3c3c9f69df9f.png)
+
+
 ## Built With
 
 - Major languages: Ruby
@@ -76,9 +81,12 @@ To setup the spaces-api project in your local machine, in the repo page:
 - Along with the above response, the app returns `Authorization token` in the headers, please make sure you make a copy of that.
 - Please note, for the consecutive requests to get `spaces` and manage `reservations` you need to send the above mentioned `token` in the headers of your requests.
 
-## Tests
-- To run tests for current app, please run below commands in your terminal:
-- `n/a`
+## Tests and Documentation
+- To run tests for current app, please run below command in your terminal:
+```
+rails rswag
+```
+- To access the swagger documentation for all the api-endpoints, run the `server` and navigate to `/api-docs`
 
 ## Authors
 
