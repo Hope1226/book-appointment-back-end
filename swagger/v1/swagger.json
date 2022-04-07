@@ -265,7 +265,7 @@
     },
     "/login": {
       "post": {
-        "summary": "Creates a new user",
+        "summary": "Logs in a user",
         "tags": [
           "Login"
         ],
