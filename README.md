@@ -93,6 +93,10 @@ rails rswag
 ```
 - To access the swagger documentation for all the api-endpoints, run the `server` and navigate to `/api-docs`
 
+## Project Management
+- The workflow of this project is managed by Kanban borad: [Final group capstone: Book an Appointment](https://github.com/users/Hope1226/projects/1).
+- The initil state of the Kanban borad: [initial state](https://user-images.githubusercontent.com/53021807/160024616-74403dac-e9d7-4a63-9b19-e9701af7d27f.png).
+
 ## Authors
 
 👤 **Umidjon Ustabaev**
@@ -116,8 +120,6 @@ rails rswag
 - GitHub: [@zainsadaqat ](https://github.com/zainsadaqat)
 - Twitter: [@zain_sadaqat](https://twitter.com/zain_sadaqat)
 
-## Project Management
-- The workflow of this project is managed by [Final group capstone: Book an Appointment](https://github.com/users/Hope1226/projects/1).
 
 ## 🤝 Contributing
 
